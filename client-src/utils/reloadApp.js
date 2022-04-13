@@ -43,7 +43,7 @@ function reloadApp({ hot, liveReload }, status) {
 
   if (hot && allowToHot) {
     log.info("App hot update...");
-
+    //# webpackHotUpdate 发出事件
     hotEmitter.emit("webpackHotUpdate", status.currentHash);
 
     if (typeof self !== "undefined" && self.window) {

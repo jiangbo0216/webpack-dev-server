@@ -4,6 +4,7 @@ import WebSocketClient from "./clients/WebSocketClient.js";
 
 // this WebsocketClient is here as a default fallback, in case the client is not injected
 /* eslint-disable camelcase */
+//# __webpack_dev_server_client__ 全局
 const Client =
   // eslint-disable-next-line camelcase, no-nested-ternary
   typeof __webpack_dev_server_client__ !== "undefined"
@@ -17,6 +18,7 @@ const Client =
 let retries = 0;
 let client = null;
 
+//# 初始化 socket, 传入 handler
 const socket = function initSocket(url, handlers) {
   client = new Client(url);
 
